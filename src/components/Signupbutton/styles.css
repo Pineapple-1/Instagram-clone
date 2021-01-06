@@ -1,0 +1,12 @@
+.signUp{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    padding-left: 10x;
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+.logo{
+    padding: 10px;
+}
