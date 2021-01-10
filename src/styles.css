@@ -1,0 +1,29 @@
+.imageUpload{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: auto;
+    background-color: #fafafa;
+}
+.progress{
+    width: 100%;
+}
+.posts{
+    padding: 20px;
+    justify-content: center;
+   
+}
+.border{
+    box-sizing: border-box;
+}
+.test{
+    
+    margin: 0;
+    padding: 10px;
+    font: 1rem/1.5 "PT Sans", Arial, sans-serif;
+    color: #5a5a5a;
+}
+

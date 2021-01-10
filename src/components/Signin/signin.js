@@ -1,10 +1,10 @@
 import { Button, Input } from "@material-ui/core";
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
-import { auth } from "../../firebase";
-import "./styles.css";
+import '../Signupbutton/styles.css'
 import logo from "../../pictures/logo.png";
+import { auth } from "../../firebase";
 
 function getModalStyle() {
   return {
@@ -26,57 +26,34 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 export default function SimpleModal({
-  open,
-  username,
+  openSignIn,
   password,
   email,
   setEmail,
-  setOpen,
+  setOpenSignIn,
   setPassword,
-  setUsername,
-  user,
-  setUser,
+
 }) {
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
-
-  useEffect(() => {
-    
-    const unsubscribe = auth.onAuthStateChanged((authUser) => {
-      if (authUser) {
-        console.log(authUser);
-        setUser(authUser);
-      } else {
-        setUser(null);
-      }
-    });
-    return()=>{
-      unsubscribe()
+  const SignIn=(event)=>{
+    event.preventDefault()
+    auth.signInWithEmailAndPassword(email,password)
+    .catch((error)=>alert(error.message))
+    setOpenSignIn(false)
     }
-  }, [user,setUser]);
 
-  const SignUp = (event) => {
-    event.preventDefault();
-    auth.createUserWithEmailAndPassword(email, password)
-    .then((authUser)=>{
-      return authUser.user.updateProfile({
-        displayName:username
-      })
 
-    })
-    .catch((error) => {
-      alert(error.message);
-    });
-  };
   return (
     <div>
       <Modal
         disablePortal
         disableEnforceFocus
         disableAutoFocus
-        open={open}
-        onClose={() => setOpen(false)}
+        open={openSignIn}
+        onClose={() => setOpenSignIn(false)}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
@@ -87,12 +64,7 @@ export default function SimpleModal({
             </div>
           </center>
           <form className="Form">
-            <Input
-              placeholder="username"
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
+           
             <Input
               placeholder="email"
               type="text"
@@ -106,8 +78,9 @@ export default function SimpleModal({
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <Button type="submit" onClick={SignUp}>
-              SignUp
+
+            <Button type="submit" onClick={SignIn}>
+              Sign In
             </Button>
           </form>
         </div>

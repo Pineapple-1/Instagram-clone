@@ -12,13 +12,39 @@
 }
 .postText{
     font-weight: normal;
-    padding: 20px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-right: 20px;
 }
 .postHeader{
     display: flex;
     align-items: center;
     padding: 20px;
+   
 }
 .postAvatar{
     margin-right: 10px;
 }
+.cmntform{
+    display: flex;
+    margin-top: 10px;
+   
+    border-top: 1px solid lightgray;
+}
+.comments{
+    flex:1;
+    border: none;
+    padding: 10px;
+}
+.btm{
+    flex:0;
+     
+   
+}
+.postComments{
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+

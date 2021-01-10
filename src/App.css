@@ -3,11 +3,41 @@ margin: 0;
     }
 .App{
 background-color: #fafafa;
-height: 100vh;
+
 }
 .appHeader{
+  position: sticky;
+  top:0;
+  z-index: 1;
   padding: 20px ;
   background-color: white;
   object-fit: contain;
   border-bottom: 1px solid lightgray;
+  display: flex;
+  justify-content: space-between;
+}
+.logo{
+  object-fit: contain;
+}
+.posts{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+.right{
+  margin-left: 20px;
+}
+@media only screen and (max-width: 600px) {
+  .posts{
+    padding: 0px;
+    flex-direction: column;
+    
+   
+  }
+  
+    .right{
+      margin-left: 0px;
+      margin:auto
+      
+    }
 }

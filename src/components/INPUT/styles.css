@@ -1,0 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+.button-wrapper {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.button-wrapper span.label {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  width: 100%;
+  background:	rgba(116, 113, 113, 0.301);
+  cursor: pointer;
+  color: #343434;
+  padding: 10px 0;
+  text-transform:uppercase;
+  font-size:15px;
+}
+
+#upload {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+    
+}
